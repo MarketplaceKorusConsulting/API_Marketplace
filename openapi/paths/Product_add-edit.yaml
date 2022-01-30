@@ -1,0 +1,104 @@
+post:
+  summary: Создание и обновление товаров
+  description: >-
+    Метод создает или обновляет товар. Один запрос - один товар. Если
+    `unique_id` не задан, то создасться новый товар. Если `unique_id` задан, но
+    не найден - вернется ошибка.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            unique_id:
+              description: Обязательное поле. Уникальный id.
+              type: string
+              example: 1639637640720x452765959533053300
+            product_name:
+              description: Наименование товара.
+              type: string
+              example: Новый товар
+            Client_unique_id_from_erp:
+              type: string
+              example: qweadsqwead
+            category_id:
+              description: Идентификатор категории.
+              type: integer
+              example: 12341213
+            barcode:
+              description: Штрихкод товара.
+              type: integer
+              example: 11112121
+            brand:
+              description: Наименование бренда.
+              type: string
+              example: Матрешкин
+            Country:
+              description: Страна изготовления.
+              type: string
+              example: Россия
+            description:
+              description: Описание товара.
+              type: string
+              example: 'Этот замечательный товар создан через API, еще и изменен!'
+            Gabarit_unit:
+              description: Еденица измерения габаритов.
+              type: string
+              example: Сантиметры
+            depth:
+              description: Глубина.
+              type: integer
+              example: 10
+            height:
+              description: Высота.
+              type: integer
+              example: 15
+            length:
+              description: Длина.
+              type: integer
+              example: 120
+            width:
+              description: Ширина.
+              type: integer
+              example: 1100
+            weight:
+              description: Вес.
+              type: integer
+              example: 100
+            weight_unit:
+              description: Еденица измерения веса.
+              type: string
+              example: Граммы
+            old_price:
+              description: Старая цена.
+              type: integer
+              example: 1500
+            price:
+              description: Новая цена.
+              type: integer
+              example: 1200
+            harakteristik:
+              description: Массив с характеристиками товара.
+              type: object
+              properties:
+                client_har_title:
+                  type: string
+                  example: Цвет
+                client_har_value:
+                  type: string
+                  example: Синий
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: string
+                example: success
+              response:
+                type: object
+                properties:
+                  unique_id:
+                    type: string
+                    example: 1639637640720x452765959533053300

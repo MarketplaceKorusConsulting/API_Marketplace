@@ -1,0 +1,27 @@
+post:
+  summary: Удаление каталога
+  description: Метод удаляет каталог.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            CLIENT_category_id:
+              type: integer
+              example: 31231231
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: string
+                example: success
+              response:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    example: Каталог успешно удален

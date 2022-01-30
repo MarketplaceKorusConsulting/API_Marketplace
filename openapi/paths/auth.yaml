@@ -1,0 +1,41 @@
+post:
+  security: []
+  summary: Получение токена
+  description: Метод позволяет получить токен с помощью логина и пароля.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            email:
+              description: Логин
+              type: string
+              example: test@test.ru
+            password:
+              description: Пароль
+              type: string
+              example: qwerty123
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: integer
+                example: success
+              response:
+                type: object
+                properties:
+                  token:
+                    description: Токен клиента.
+                    type: string
+                    example: 1640006703213x410134863429732220
+                  user_id:
+                    description: Идентификатор клиента.
+                    type: string
+                    example: 1639995517569x263123207087834520
+                  expires:
+                    type: integer
+                    example: 31536123

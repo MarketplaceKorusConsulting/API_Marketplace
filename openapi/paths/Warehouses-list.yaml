@@ -1,0 +1,32 @@
+post:
+  summary: Склады
+  description: >-
+    Метод возвражает все склады пользователя с характеристиками, если не указан
+    `unique_id`. Если `unique_id` указан - возвращается только один товар.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            unique_id:
+              type: string
+              example: ''
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              unique_id:
+                type: string
+                example: 1639642239332x762328172806975100
+              warehouse_id:
+                type: string
+                example: '123654'
+              warehouse_name:
+                type: string
+                example: Новый склад
+              warehouse_status_Opt:
+                type: string
+                example: ACTIVE

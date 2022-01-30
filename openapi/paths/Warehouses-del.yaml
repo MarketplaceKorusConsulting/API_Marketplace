@@ -1,0 +1,48 @@
+post:
+  summary: Удаление склада
+  description: Метод удаляет склад по уникальному ID.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            unique_id:
+              type: string
+              example: ''
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              unique_id:
+                type: string
+                example: 1639642239332x762328172806975100
+              warehouse_id:
+                type: string
+                example: '123654'
+              warehouse_name:
+                type: string
+                example: Новый склад
+              warehouse_status_Opt:
+                type: string
+                example: ACTIVE
+    '404':
+      description: Failure
+      content:
+        application/json:
+          schema:
+            properties:
+              statusCode:
+                type: integer
+                example: 404
+              body:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: NOT_FOUND
+                  massage:
+                    type: string
+                    example: Workflow not found Warehouses-del

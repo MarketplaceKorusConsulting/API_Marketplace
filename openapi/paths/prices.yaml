@@ -1,0 +1,33 @@
+post:
+  summary: Установить цену товара
+  description: Метод задает новую цену товара.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            unique_id:
+              type: string
+              example: 1639637640720x452765959533053300
+            old_price:
+              type: integer
+              example: 1500
+            price:
+              type: integer
+              example: 1200
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: string
+                example: success
+              response:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    example: Цена успешно отредактирована

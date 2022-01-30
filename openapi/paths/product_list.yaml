@@ -1,0 +1,87 @@
+post:
+  summary: Товары
+  description: >-
+    Метод возвражает все товары пользователя с характеристиками, если не указан
+    `unique_id`. Если `unique_id` указан - возвращается только один товар
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            unique_id:
+              description: Уникальный id.
+              type: integer
+              example: ''
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              unique_id:
+                description: Уникальный id.
+                type: string
+                example: 1639995634810x788263130778828800
+              product_name:
+                description: Наименование товара.
+                type: string
+                example: Планшет
+              Client_unique_id_from_erp:
+                type: string
+                example: LLOKVKNCXK
+              category_id:
+                description: Идентификатор категории.
+                type: string
+                example: null
+              barcode:
+                description: Штрихкод товара.
+                type: integer
+                example: 214123213
+              Country:
+                description: Страна производителя.
+                type: string
+                example: Россия
+              description:
+                description: Описание товара.
+                type: string
+                example: ''
+              Gabbarit_unit:
+                description: Еденица измерения габаритов.
+                type: string
+                example: Миллиметры
+              depth:
+                description: Глубина.
+                type: integer
+                example: 890
+              height:
+                description: Высота.
+                type: integer
+                example: 756
+              lenght:
+                description: Длина.
+                type: integer
+                example: 576
+              width:
+                description: Ширина.
+                type: integer
+                example: 800
+              weight:
+                description: Вес.
+                type: integer
+                example: 700
+              weight_unit:
+                description: Еденица измерения веса.
+                type: string
+                example: Граммы
+              old_price:
+                description: Старая цена.
+                type: integer
+                example: 6000
+              price:
+                description: Новая цена.
+                type: integer
+                example: 5000
+              harakteristik:
+                description: Массив с характеристиками.
+                type: object

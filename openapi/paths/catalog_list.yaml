@@ -1,0 +1,51 @@
+post:
+  summary: Категории
+  description: Метод возвражает все категории каталога пользователя.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            '-':
+              type: none
+              example: null
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: string
+                example: success
+              response:
+                type: object
+                properties:
+                  catalog:
+                    type: object
+                    properties:
+                      CLIENT_category_id":
+                        type: integer
+                        example: 213123123
+                      CLIENT_category_name:
+                        type: string
+                        example: Швейные машинки
+                      client_id:
+                        type: string
+                        example: 1635784787159x754900195449749900
+                      Created Date:
+                        type: integer
+                        example: 1636976041523
+                      Created By:
+                        type: string
+                        example: admin_user_korus-marketplace_test
+                      Modified Date:
+                        type: integer
+                        example: 1638883074527
+                      WB_predmet:
+                        type: string
+                        example: 1638795272065x249977000876748800
+                      _id:
+                        type: string
+                        example: 1636976041463x819130399848875500

@@ -1,0 +1,63 @@
+post:
+  summary: Создание и обновление  склада
+  description: >-
+    Метод создает или обновляет склад. Один запрос - один склад. Если
+    `unique_id` не задан, то создастся новый склад. Если `unique_id` задан, но
+    не найден - вернется ошибка.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            unique_id:
+              type: integer
+              example: ''
+            warehouse_id:
+              type: string
+              example: '123657'
+            warehouse_name:
+              type: string
+              example: Склад №1
+            warehouse_status_Opt:
+              type: string
+              example: ACTIVE
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: string
+                example: success
+              response:
+                type: object
+                properties:
+                  warehouse:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 1640026064270x321152913177484400
+                      Created By:
+                        type: string
+                        example: 1635784787159x754900195449749900
+                      Created Date:
+                        type: integer
+                        example: 1640026064315
+                      Modified Date:
+                        type: integer
+                        example: 1640026064361
+                      client_id:
+                        type: string
+                        example: 1635784787159x754900195449749900
+                      warehouse_id:
+                        type: integer
+                        example: 123654
+                      warehouse_name:
+                        type: string
+                        example: Склад №1
+                      warehouse_status_Opt:
+                        type: string
+                        example: ACTIVE

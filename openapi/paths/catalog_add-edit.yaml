@@ -1,0 +1,35 @@
+post:
+  summary: Создание или изменение каталога
+  description: >-
+    Медод создает или изменяет каталог клиента. Один запрос - одно название
+    каталога.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            CLIENT_category_id:
+              type: integer
+              example: 12348789554
+            CLIENT_category_name:
+              type: string
+              example: Супер прикольные женские куртки
+            parent_id:
+              type: integer
+              example: 43244231234
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: string
+                example: success
+              response:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    example: Каталог успешно обновлен

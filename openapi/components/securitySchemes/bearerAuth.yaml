@@ -1,0 +1,6 @@
+description: >-
+  После получения токена необходимо создать дополнительный Header:
+  `Authorization`: `Bearer YOUR_TOKEN` для всех остальных запросов
+type: http
+scheme: bearer
+bearerFormat: 16387321322x978663421424

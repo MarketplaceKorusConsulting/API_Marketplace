@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  version: 1.0.
+  title: API korus-marketplace
+  description: |
+    # Порядок работы с методами
+    1. Авторизоваться с помощью логина и пароля
+    2. Загрузить категории товарного каталога
+    3. Загрузить товары
+    4. Загрузить склады
+    5. Загрузить остатки
+    6. Загрузить цены
+  x-logo:
+    url: /img/logo.png
+servers:
+  - url: 'https://korus-marketplace.bubbleapps.io/version-test/api/1.1/wf/'
+paths:
+  /auth:
+    $ref: paths\auth.yaml
+  /product_list:
+    $ref: paths\product_list.yaml
+  /Product_add-edit:
+    $ref: paths\Product_add-edit.yaml
+  /warehouses_add-edit:
+    $ref: paths\warehouses_add-edit.yaml
+  /Warehouses-list:
+    $ref: paths\Warehouses-list.yaml
+  /Warehouses-del:
+    $ref: paths\Warehouses-del.yaml
+  /prices:
+    $ref: paths\prices.yaml
+  /stocks_add-edit:
+    $ref: paths\stocks_add-edit.yaml
+  /catalog_add-edit:
+    $ref: paths\catalog_add-edit.yaml
+  /catalog_list:
+    $ref: paths\catalog_list.yaml
+  /catalog_del:
+    $ref: paths\catalog_del.yaml
+components:
+  securitySchemes:
+    bearerAuth:
+      description: >-
+        После получения токена необходимо создать дополнительный Header:
+        `Authorization`: `Bearer YOUR_TOKEN` для всех остальных запросов
+      type: http
+      scheme: bearer
+      bearerFormat: 16387321322x978663421424
+security:
+  - bearerAuth: []

@@ -1,0 +1,39 @@
+post:
+  summary: Создание или обновление остатков на складе
+  description: >-
+    Создает или обновляет остатки на складе. Один запрос - один остаток для
+    одного товара. Если `unique_id` для склада и для товара не задан, то
+    вернется ошибка.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            warehouse_unique_id:
+              type: string
+              example: 1639642239332x762328172806975100
+            goods_unique_id:
+              type: string
+              example: 1639637640720x452765959533053300
+            quantity:
+              type: integer
+              example: 12
+            reserved:
+              type: integer
+              example: 15
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: string
+                example: success
+              response:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    example: Остатки успешно обновлены
